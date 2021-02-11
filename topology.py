@@ -33,17 +33,20 @@ class sdnLab(Topo):
     def build(self):
 
         info( '*** Adding hosts\n' )
+        ## Client10
         c10 = self.addHost('c10',ip='10.0.10.10/24', mac='00:00:00:00:00:10')
-        
+        ## Client20
         c20 = self.addHost('c20',ip='10.0.20.20/24', mac='00:00:00:00:00:20')
         ## Server00
         s00 = self.addHost('s00',ip='192.168.0.100/24', mac='00:00:00:00:00:20')
 
         info( '*** Adding router\n' )
         defaultIP = '192.168.0.1/24'
+        ## LinuxRouter
         lr0 = self.addNode('lr0', cls=LinuxRouter, ip=defaultIP)
 
         info( '*** Adding switches\n' )
+        ## OpenFlow Switch 1 && OpenFlow Switch 2
         ofs1, ofs2 = [self.addSwitch(s) for s in ('ofs1', 'ofs2')]
         
         info( '*** Creating links\n' )
