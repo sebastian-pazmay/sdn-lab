@@ -2,7 +2,10 @@
 
 Simple mininet topology
 
-Client --- OFs1 --- OFs2 --- Server
+       Client10 --- OFs1 --- LinuxRouter --- OFs2 --- Client20
+                                  |
+                                  |
+                               Server00
 
 ### Run the topology
 ```
